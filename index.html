@@ -158,8 +158,9 @@
 >>>>>>> 33bc877 (Create index.html)
 =======
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html lang="en">
   <head>
+<<<<<<< HEAD
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -448,6 +449,105 @@
         window.location.href = window.location.pathname;
       }
       //   code lyoko
+=======
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      * {
+        font-family: "Roboto";
+      }
+      h1 {
+        text-align: center;
+      }
+      .content {
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 100vh;
+        width: 100vw;
+        align-content: center;
+        justify-content: center;
+        background-color: #fafbf8;
+      }
+      .video {
+        display: grid;
+        justify-items: center;
+      }
+      h1 {
+        margin-bottom: 2rem;
+      }
+      .project_list {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        width: 100%;
+        height: 100%;
+      }
+      .project_list a {
+        padding: 1rem;
+        font-size: larger;
+        text-decoration: none;
+        background-color: white;
+        border-radius: 18px;
+        font-family: "Courier New", Courier, monospace;
+        position: absolute;
+      }
+      .project_list a:hover {
+        box-shadow: #ccc 0px 0px 4px;
+      }
+      .project_list a:nth-child(1) {
+        top: 79%;
+        right: 12%;
+        transform: rotate(-14deg);
+      }
+      .project_list a:nth-child(2) {
+        top: 13%;
+        right: 8%;
+        transform: rotate(14deg);
+      }
+      .project_list a:nth-child(3) {
+        top: 79%;
+        left: 12%;
+        transform: rotate(14deg);
+      }
+      .project_list a:nth-child(4) {
+        top: 13%;
+        left: 8%;
+        transform: rotate(-14deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1>On Progress.. <span id="loading""></span></h1>
+      <div class="video">
+        <video id="video" loop autoplay>
+          <source src="./assets/videoplayback.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+    <div class="project_list">
+      <a href="https://sandkalam.github.io/myclass" title="kelasku"> SMK </a>
+      <a href="https://sandkalam.github.io/" title="Pencari Q"> Pencari Q </a>
+      <a href="https://sandkalam.github.io/c_dosen" title="Chat Dosen">
+        Chat Dosen
+      </a>
+      <a href="#" title="project 4"> Project 4 </a>
+    </div>
+
+    <script>
+      document.body.addEventListener("click", () => {
+        document.getElementById("video").play();
+        
+      });
+      
+>>>>>>> 0358484 (maintenance mode)
     </script>
   </body>
 </html>
