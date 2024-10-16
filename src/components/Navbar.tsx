@@ -18,7 +18,11 @@ const data = [
 const Navbar = () => {
   return (
     <>
+<<<<<<< HEAD
       <div className="navbar bg-base-100 shadow-lg fixed top-0 z-10 print:hidden">
+=======
+      <div className="navbar bg-base-100 shadow-lg fixed top-0 z-10">
+>>>>>>> 750230c (Init Baru : Menggunakan React)
         <div className="navbar-start">
           <div className="dropdown">
             <div

@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /* eslint-disable @typescript-eslint/no-explicit-any */
+=======
+>>>>>>> 750230c (Init Baru : Menggunakan React)
 import { useEffect, useState } from "react";
 
 export default function Chat() {
@@ -7,6 +10,7 @@ export default function Chat() {
   const [message, setMessage] = useState<string>("");
   const [selectedReciever, setSelectedReciever] = useState<any>([]);
   useEffect(() => {
+<<<<<<< HEAD
     const interval = setInterval(() => {
       const data = localStorage.getItem("data");
       if (data) {
@@ -17,6 +21,10 @@ export default function Chat() {
     }, 1000);
 
     return () => clearInterval(interval);
+=======
+    const data = localStorage.getItem("data");
+    data ? setReciever(JSON.parse(data)) : null;
+>>>>>>> 750230c (Init Baru : Menggunakan React)
   }, []);
 
   const handleJurusan = (e: any) => {
@@ -54,7 +62,11 @@ export default function Chat() {
     window.open(url, "_blank");
   };
   return (
+<<<<<<< HEAD
     <div className="container mx-auto pt-10 pb-5 print:hidden">
+=======
+    <div className="container mx-auto pt-10 pb-5">
+>>>>>>> 750230c (Init Baru : Menggunakan React)
       <div className="card bg-base-100">
         <div className="card-body">
           <h1 className="text-4xl font-bold text-center mb-3">Chat</h1>
@@ -115,7 +127,11 @@ export default function Chat() {
           <div className="card-body">
             <h3 className="text-2xl font-bold text-center mb-3">Pesan</h3>
             {/* chat */}
+<<<<<<< HEAD
 
+=======
+           
+>>>>>>> 750230c (Init Baru : Menggunakan React)
             <div className="chat chat-end bg-gray-100 p-4">
               <div className="chat-bubble max-w-sm bg-white text-black">
                 <div className="chat-header">

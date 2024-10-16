@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /* eslint-disable @typescript-eslint/no-explicit-any */
+=======
+>>>>>>> 750230c (Init Baru : Menggunakan React)
 import { useEffect } from "react";
 
 import { useState } from "react";
@@ -26,6 +29,7 @@ const Schedule = () => {
 
   useEffect(() => {
     const dataJadwal = localStorage.getItem("jadwal");
+<<<<<<< HEAD
     if (dataJadwal) {
       const jadwal: JadwalItem[] = JSON.parse(dataJadwal);
       setJadwal(jadwal);
@@ -40,6 +44,11 @@ const Schedule = () => {
       }
     }, 1000);
     return () => clearInterval(interval);
+=======
+    dataJadwal ? setJadwal(JSON.parse(dataJadwal)) : setJadwal([]);
+    const dataDosen = localStorage.getItem("data");
+    dataDosen ? setDataDosen(JSON.parse(dataDosen)) : setDataDosen([]);
+>>>>>>> 750230c (Init Baru : Menggunakan React)
   }, []);
   const handleTambahJadwal = () => {
     const modal = document.getElementById("my_modal_5") as HTMLDialogElement;
@@ -94,6 +103,7 @@ const Schedule = () => {
 
   const handleSubmitJadwal = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+<<<<<<< HEAD
 
     setJadwal((prevJadwal) => {
       const newJadwal = [
@@ -113,6 +123,21 @@ const Schedule = () => {
       return newJadwal;
     });
     // localStorage.setItem("jadwal", JSON.stringify(jadwal));
+=======
+    console.log("Submit Jadwal");
+    const newJadwal: JadwalItem = {
+      id: jadwal.length + 1,
+      matakuliah: matakuliah,
+      name: dosen.toString(),
+      hari: hari,
+      waktu: {
+        waktu_mulai: waktuMulai,
+        waktu_selesai: waktuSelesai,
+      },
+    };
+    setJadwal([...jadwal, newJadwal]);
+    localStorage.setItem("jadwal", JSON.stringify(jadwal));
+>>>>>>> 750230c (Init Baru : Menggunakan React)
   };
 
   const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -130,7 +155,11 @@ const Schedule = () => {
             <h1 className="text-2xl font-bold text-center">Schedule</h1>
             <div className="grid grid-col-1">
               <div className="card bg-base-100">
+<<<<<<< HEAD
                 <table className="table border border-gray-300 print:border print:border-black">
+=======
+                <table className="table border-1 border-gray-300">
+>>>>>>> 750230c (Init Baru : Menggunakan React)
                   <thead className="text-center rounded-md">
                     <tr className="bg-primary text-white">
                       <th className="rounded-tl-md w-5">No</th>
@@ -142,6 +171,7 @@ const Schedule = () => {
                     </tr>
                   </thead>
                   <tbody className="text-center">
+<<<<<<< HEAD
                     {Array.isArray(jadwal) &&
                       jadwal.map((item: JadwalItem) => (
                         <tr key={item.id}>
@@ -164,6 +194,39 @@ const Schedule = () => {
                   </tbody>
                 </table>
                 <div className="flex justify-end gap-3 mt-3 print:hidden">
+=======
+                    {jadwal.map((jadwal) => (
+                      <tr key={jadwal.id}>
+                        <td>{jadwal.id}</td>
+                        <td className="text-start">{jadwal.matakuliah}</td>
+                        <td className="text-start">{jadwal.name}</td>
+                        <td>{jadwal.hari}</td>
+                        <td>
+                          {jadwal.waktu.waktu_mulai} -{" "}
+                          {jadwal.waktu.waktu_selesai}
+                        </td>
+                        <td className={opsiJadwal ? "hidden" : ""}>
+                          {/* <button
+                            className="btn btn-edit"
+                            data-tip="Edit"
+                            onClick={() => handleEditJadwal(jadwal.id)}
+                          >
+                            Edit
+                          </button> */}
+                          <button
+                            className="btn btn-error"
+                            data-tip="Hapus"
+                            onClick={() => handleHapusJadwal(jadwal.id)}
+                          >
+                            Hapus
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <div className="flex justify-end gap-3 mt-3">
+>>>>>>> 750230c (Init Baru : Menggunakan React)
                   <button
                     className="btn btn-primary"
                     onClick={handleTambahJadwal}
