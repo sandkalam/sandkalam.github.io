@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -12,8 +13,12 @@ lerna-debug.log*
 
 node_modules
 =======
+=======
+>>>>>>> 3c7be72 (marge)
 node_modules
 =======
+=======
+>>>>>>> ac9f73c (marge)
 # Logs
 logs
 *.log
@@ -40,6 +45,7 @@ dist-ssr
 *.sln
 *.sw?
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 node_modules
 >>>>>>> 9c434d3 (marge)
@@ -49,3 +55,11 @@ node_modules
 =======
 >>>>>>> 4a0e7e2 (Init Baru : Menggunakan React)
 >>>>>>> 750230c (Init Baru : Menggunakan React)
+=======
+>>>>>>> 4a0e7e2 (Init Baru : Menggunakan React)
+=======
+=======
+node_modules
+>>>>>>> 9c434d3 (marge)
+>>>>>>> ac9f73c (marge)
+>>>>>>> 3c7be72 (marge)
