@@ -1,0 +1,50 @@
+name: CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main  # Menjalankan workflow saat ada perubahan di branch 'main'
+  pull_request:
+    branches:
+      - main  # Menjalankan workflow saat ada pull request ke branch 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Menggunakan runner Ubuntu terbaru
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3  # Checkout kode dari repository
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'  # Tentukan versi Node.js yang digunakan
+        cache: 'pnpm'  # Menyimpan cache untuk dependensi PNPM
+
+    - name: Install PNPM
+      run: npm install -g pnpm  # Instalasi PNPM global
+
+    - name: Install dependencies
+      run: pnpm install  # Install semua dependensi menggunakan PNPM
+
+    - name: Lint code (optional)
+      run: pnpm lint  # Jalankan linting (pastikan sudah setup eslint)
+
+    - name: Run tests (optional)
+      run: pnpm test  # Jalankan testing (pastikan sudah setup testing)
+
+    - name: Build project
+      run: pnpm run build  # Build proyek menggunakan ViteJS
+
+    - name: Upload build artifacts (optional)
+      uses: actions/upload-artifact@v3
+      with:
+        name: build
+        path: dist  # Path folder build output (misalnya 'dist' pada ViteJS)
+
+    - name: Deploy (optional)
+      run: |
+        echo "Deploy step (add your deployment script here)"
+        # Tambahkan script deploy ke hosting pilihan Anda, seperti Vercel, Netlify, atau server lainnya.
+
