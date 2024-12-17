@@ -23,7 +23,9 @@ jobs:
         cache: 'pnpm'  # Menyimpan cache untuk dependensi PNPM
 
     - name: Install PNPM
-      run: npm install -g pnpm  # Instalasi PNPM global
+      run: |
+        npm install -g pnpm  # Instalasi PNPM global
+        pnpm --version  # Verifikasi instalasi PNPM
 
     - name: Install dependencies
       run: pnpm install  # Install semua dependensi menggunakan PNPM
